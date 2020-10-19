@@ -7,10 +7,12 @@ var CACHE_NAME = 'cache-v1';
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(urlsToCache);
-            })
+        caches.open(CACHE_NAME) // 上記で指定しているキャッシュ名
+            .then(
+                function(cache){
+                    return cache.addAll(urlsToCache); // 指定したリソースをキャッシュへ追加
+                    // 1つでも失敗したらService Workerのインストールはスキップされる
+                })
     );
 });
 

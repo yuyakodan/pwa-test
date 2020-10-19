@@ -1,0 +1,15 @@
+{
+  "short_name": "PWAサイト",
+  "name": "サンプルのPWAサイト",
+  "start_url": "https://pwa.glitch.me/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "pwa-logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#2196F3",
+  "orientation": "portrait"
+}

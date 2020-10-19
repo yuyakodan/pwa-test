@@ -4,6 +4,10 @@ var urlsToCache = [
 
 var CACHE_NAME = 'cache-v1';
 
+const CACHE_KEYS = [
+    CACHE_NAME
+];
+
 
 self.addEventListener('install', function(event) {
     event.waitUntil(

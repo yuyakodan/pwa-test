@@ -1,30 +1,31 @@
+var urlsToCache = [
+    "index.html",
+];
+
 var CACHE_NAME = 'cache-v1';
 
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
-
-
         caches.open(CACHE_NAME)
             .then(function(cache) {
-
-                return cache.addAll('/');
-
+                return cache.addAll(urlsToCache);
             })
-
-
     );
 });
 
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
     event.waitUntil(
-
-        caches.keys().then(function(cache) {
-            cache.map(function(name) {
-                if(CACHE_NAME !== name) caches.delete(name);
-            })
+        caches.keys().then(keys => {
+            return Promise.all(
+                keys.filter(key => {
+                    return !CACHE_KEYS.includes(key);
+                }).map(key => {
+                    // 不要なキャッシュを削除
+                    return caches.delete(key);
+                })
+            );
         })
-
     );
 });

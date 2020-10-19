@@ -1,11 +1,11 @@
 {
   "short_name": "PWAサイト",
   "name": "サンプルのPWAサイト",
-  "start_url": "https://pwa.glitch.me/",
+  "start_url": "https://yuyakodan.github.io/pwa-test/",
   "display": "standalone",
   "icons": [
     {
-      "src": "pwa-logo.png",
+      "src": "icon.png",
       "type": "image/png",
       "sizes": "192x192"
     }

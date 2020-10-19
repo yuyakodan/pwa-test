@@ -1,4 +1,4 @@
-var CACHE_NAME = 'v0.0.1';
+var CACHE_NAME = 'cache-v1';
 
 
 self.addEventListener('install', function(event) {

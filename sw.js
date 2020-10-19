@@ -17,3 +17,14 @@ self.addEventListener('install', function(event) {
 });
 
 
+self.addEventListener('activate', function(event) {
+    event.waitUntil(
+
+        caches.keys().then(function(cache) {
+            cache.map(function(name) {
+                if(CACHE_NAME !== name) caches.delete(name);
+            })
+        })
+
+    );
+});
